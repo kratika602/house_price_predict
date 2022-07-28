@@ -1,12 +1,10 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_ngrok import run_with_ngrok
 import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('/content/drive/My Drive/project2.pkl','rb')) 
-run_with_ngrok(app)
+model = pickle.load(open('project2.pkl','rb')) 
 
 @app.route('/')
 def home():
